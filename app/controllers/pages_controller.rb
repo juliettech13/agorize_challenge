@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @skills = Skill.all
-
+    @skills = Skill.where(parent: nil)
   end
 end
