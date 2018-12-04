@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :skill
-  has_many :skills
+  has_many :skills_users
+  has_many :skills, through: :skills_users
 end
