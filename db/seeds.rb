@@ -9,8 +9,8 @@ p "Destroying SkillsUsers..."
 SkillsUser.destroy_all
 p "Destroying Users..."
 User.destroy_all
-# p "Destroying Skills..."
-# Skill.destroy_all
+p "Destroying Skills..."
+Skill.destroy_all
 
 p "Creating Skills...."
 football = Skill.create!(name: "Football")
@@ -31,5 +31,5 @@ SkillsUser.create!(skill: football, user: jules)
 SkillsUser.create!(skill: football, user: pierre)
 SkillsUser.create!(skill: foot, user: julian)
 SkillsUser.create!(skill: basketball, user: aida)
-SkillsUser.create!(skill: soccer, user: monique)
+SkillsUser.create!(skill: basket, user: monique)
 

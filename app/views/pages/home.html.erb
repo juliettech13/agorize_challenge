@@ -1,6 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<%#= @children.each do |child| %>
+  <%#= child.name %>
+  <%# end %>
+
 <%# @skills.each do |skill| %>
 <%#= skill.user.email %>
   <%# skill.users.each do |user| %>
@@ -18,15 +22,17 @@
     </tr>
   </thead>
   <tbody>
-      <% @skills.each do |skill| %>
-        <%# skill.users.each do |user| %>
+      <% @parents.each do |parent| %>
+        <%# parent.users.each do |user| %>
           <%# points = 0 %>
           <%# points += user.points %>
         <tr>
-          <td><%= skill.id %></td>
-          <td><%= skill.name %></td>
-          <td><%= skill.points %></td>
-          <td><%= skill.users.count %></td>
+          <td><%= parent.id %></td>
+          <td><%= parent.name %></td>
+          <td><%= parent.points %></td>
+          <td><%= parent.users.count %>
+            (<%#= parent.users.each {|user| p user.email} %>)
+          </td>
         </tr>
         <%# end %>
       <% end %>
