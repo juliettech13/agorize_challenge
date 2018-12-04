@@ -1,0 +1,13 @@
+<div class="container">
+  <% @children.each do |child| %>
+  <%= child.name %>
+  <% end %>
+
+  <div class="form-group">
+    <%= simple_form_for @skill do |f| %>
+      <%= f.input :name, placeholder: "Programming" %>
+      <%= f.input :parent, collection: @children %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
