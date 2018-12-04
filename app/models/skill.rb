@@ -3,8 +3,18 @@ class Skill < ApplicationRecord
   has_many :skills_users
   has_many :users, through: :skills_users
 
+  # def children
+  #   Skill.all.each do |skill|
+  #     if skill.parent != nil
+  #       skill.users
+  #     end
+  #   end
+  # end
+
+
   def points
     total = 0
+
     if self.users == nil
       total = 0
     else
@@ -17,10 +27,3 @@ class Skill < ApplicationRecord
 end
 
 
-# must compute the sum all points even for children of parent
-
-  # if parent_id != nil
-    #
-
-    # => table with skill's parent name
-    # + points => user.points
