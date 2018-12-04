@@ -1,2 +1,47 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%# @skills.each do |skill| %>
+<%#= skill.user.email %>
+  <%# skill.users.each do |user| %>
+    <%#= user.email %>
+  <%# end %>
+<%# end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col-md-3">ID</th>
+      <th scope="col-md-3">Name</th>
+      <th scope="col-md-3">Points</th>
+      <th scope="col-md-3">Users_Count</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @skills.each do |skill| %>
+        <%# skill.users.each do |user| %>
+          <%# points = 0 %>
+          <%# points += user.points %>
+        <tr>
+          <td><%= skill.id %></td>
+          <td><%= skill.name %></td>
+          <td><%= skill.points %></td>
+        </tr>
+        <%# end %>
+      <% end %>
+
+   <!--  </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr> -->
+  </tbody>
+</table>
