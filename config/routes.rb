@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'skills/new'
-
-  get 'skills/create'
+  resources :skills, only: [:new, :create]
 
   devise_for :users
   root to: 'pages#home'
