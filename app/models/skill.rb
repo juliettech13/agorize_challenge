@@ -5,22 +5,9 @@ class Skill < ApplicationRecord
 
   def points
     total = 0
-    if self.users == nil
-      total = 0
-    else
-      self.users.each do |user|
-        total += user.points
-      end
+    self.users.each do |user|
+      total += user.points
     end
     total
   end
 end
-
-
-# must compute the sum all points even for children of parent
-
-  # if parent_id != nil
-    #
-
-    # => table with skill's parent name
-    # + points => user.points

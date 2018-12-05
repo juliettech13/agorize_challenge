@@ -1,15 +1,19 @@
 class SkillsController < ApplicationController
   def new
     @skill = Skill.new
-    @children = Skill.all.where(parent: nil)
+    @parents = Skill.all.where(parent: nil)
   end
 
   def create
-    @parent = Skill.find(params[:skill][:parent])
-    params[:skill][:parent] = Skill.find(params[:skill][:parent])
+    if params[:skill][:parent].blank?
+      params[:skill][:parent] = nil
+    else
+      params[:skill][:parent] = Skill.find(params[:skill][:parent])
+    end
+
     @skill = Skill.new(set_params)
-    @skill.parent = @parent
-    if @skill.save!
+
+    if @skill.save
       redirect_to root_path
     else
       render :new
